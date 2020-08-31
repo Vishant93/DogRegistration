@@ -6,23 +6,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DogRegistrationApplication implements CommandLineRunner {
-	@Autowired
-	DogRepository repository;
+public class DogRegistrationApplication implements CommandLineRunner{
+	@Autowired DogRepository dogRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DogRegistrationApplication.class, args);
 	}
-	
 	@Override
-	public void run(String... args) throws Exception {
-		// put down the dogs
-		repository.deleteAll();
-
-	    // save a couple of dogs
-	    repository.save(new Dog("Ruffles", 3, "Labrador Retriever"));
-	    repository.save(new Dog("Pinto", 5, "Jack Russell Terrier"));
-	    repository.save(new Dog("Coco", 9, "Maltipoo"));
+	  public void run(String... args) throws Exception {
+		dogRepository.deleteAll();
+		dogRepository.save(new Dog("Sparkle_Puff", 3, "Dachshund"));
+		dogRepository.save(new Dog("Bubbles", 2, "Great Dane"));
+		dogRepository.save(new Dog("Cerebrus", 13, "Chihuahua"));
 	}
-
 }

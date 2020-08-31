@@ -1,29 +1,57 @@
 package com.vishant.sandwichtechnologies;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "DogInfo")
 public class Dog {
 
-	  @Id
-	  public String id;
-	  
-	  public String dogName;
-	  public int dogAge;
-	  public String dogBreed;
+	@Id
+	private String id;
+	
+	private String dogName;
+	private int dogAge;
+	private String dogBreed;
 
-	  public Dog() {}
+	public Dog() {}
 
-	  public Dog(String dogName, int dogAge, String dogBreed) {
+	public Dog(String dogName, int dogAge, String dogBreed) {
 	    this.dogName = dogName;
 	    this.dogAge = dogAge;
 	    this.dogBreed = dogBreed;
-	  }
+	}
+	  
+	public String getId() {
+		return id;
+	}
 
-	@Override
-	public String toString() {
-		return "Dog [id=" + id + ", dogName=" + dogName + ", dogAge=" + dogAge + ", dogBreed=" + dogBreed + "]";
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getDogName() {
+		return dogName;
+	}
+
+	public void setDogName(String dogName) {
+		this.dogName = dogName;
+	}
+
+	public int getDogAge() {
+		return dogAge;
+	}
+
+	public void setDogAge(int dogAge) {
+		this.dogAge = dogAge;
+	}
+
+	public String getDogBreed() {
+		return dogBreed;
+	}
+
+	public void setDogBreed(String dogBreed) {
+		this.dogBreed = dogBreed;
 	}
 	  
 }
