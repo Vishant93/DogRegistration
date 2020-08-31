@@ -1,15 +1,28 @@
 package com.vishant.sandwichtechnologies;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "DogInfo")
 public class Dog {
 
-	  @Id
-	  public String id;
+	@Id
+	private String id;
+	
+	private String dogName;
+	private int dogAge;
+	private String dogBreed;
+
+	public Dog() {}
+
+	public Dog(String dogName, int dogAge, String dogBreed) {
+	    this.dogName = dogName;
+	    this.dogAge = dogAge;
+	    this.dogBreed = dogBreed;
+	}
 	  
-	  public String getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -40,17 +53,5 @@ public class Dog {
 	public void setDogBreed(String dogBreed) {
 		this.dogBreed = dogBreed;
 	}
-
-	public String dogName;
-	  public int dogAge;
-	  public String dogBreed;
-
-	  public Dog() {}
-
-	  public Dog(String dogName, int dogAge, String dogBreed) {
-	    this.dogName = dogName;
-	    this.dogAge = dogAge;
-	    this.dogBreed = dogBreed;
-	  }
 	  
 }

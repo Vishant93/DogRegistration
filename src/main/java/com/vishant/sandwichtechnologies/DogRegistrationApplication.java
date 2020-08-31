@@ -15,8 +15,8 @@ public class DogRegistrationApplication implements CommandLineRunner{
 	@Override
 	  public void run(String... args) throws Exception {
 		dogRepository.deleteAll();
-		dogRepository.save(new Dog("Sparkle Puff", 3, "Dachshund"));
-		dogRepository.save(new Dog("Bubbles", 3, "Great Dane"));
-		dogRepository.save(new Dog("Cerebrus", 3, "Chihuahua"));
+		dogRepository.save(new Dog("Sparkle_Puff", 3, "Dachshund"));
+		dogRepository.save(new Dog("Bubbles", 2, "Great Dane"));
+		dogRepository.save(new Dog("Cerebrus", 13, "Chihuahua"));
 	}
 }
