@@ -9,7 +9,39 @@ public class Dog {
 	  @Id
 	  public String id;
 	  
-	  public String dogName;
+	  public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getDogName() {
+		return dogName;
+	}
+
+	public void setDogName(String dogName) {
+		this.dogName = dogName;
+	}
+
+	public int getDogAge() {
+		return dogAge;
+	}
+
+	public void setDogAge(int dogAge) {
+		this.dogAge = dogAge;
+	}
+
+	public String getDogBreed() {
+		return dogBreed;
+	}
+
+	public void setDogBreed(String dogBreed) {
+		this.dogBreed = dogBreed;
+	}
+
+	public String dogName;
 	  public int dogAge;
 	  public String dogBreed;
 
@@ -20,10 +52,5 @@ public class Dog {
 	    this.dogAge = dogAge;
 	    this.dogBreed = dogBreed;
 	  }
-
-	@Override
-	public String toString() {
-		return "Dog [id=" + id + ", dogName=" + dogName + ", dogAge=" + dogAge + ", dogBreed=" + dogBreed + "]";
-	}
 	  
 }
