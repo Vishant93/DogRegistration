@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -21,6 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class DogController {
 	@Autowired 
 	DogRepository dogRepository;
+	
+	@GetMapping("/hello")
+	public String hello(@RequestParam(name = "name", defaultValue = "World") String name) {
+		return String.format("Hello, %s", name);
+	}
 	
 	@GetMapping("/dogs")
 	public List<Dog> getDogs() {
